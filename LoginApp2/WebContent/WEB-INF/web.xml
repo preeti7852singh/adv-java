@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>LoginApp</display-name>
+  <welcome-file-list>
+    <welcome-file>input.html</welcome-file>
+    
+  </welcome-file-list>
+  
+  <context-param>
+  <param-name>driver</param-name>
+  <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  
+  <context-param>
+  <param-name>dburl</param-name>
+  <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+  <param-name>dbuser</param-name>
+  <param-value>system</param-value>
+  </context-param>
+  <context-param>
+  <param-name>dbpwd</param-name>
+  <param-value>manager</param-value>
+  </context-param>
+  
+  <servlet>
+  <servlet-name>register</servlet-name>
+  <servlet-class>com.nt.jdbc.UserRegistration</servlet-class>
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>register</servlet-name>
+<url-pattern>/registerurl</url-pattern>
+</servlet-mapping>
+   <servlet>
+  <servlet-name>login</servlet-name>
+  <servlet-class>com.nt.jdbc.UserLogin</servlet-class>
+  <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>login</servlet-name>
+<url-pattern>/loginurl</url-pattern>
+</servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>
